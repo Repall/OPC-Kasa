@@ -1,5 +1,3 @@
-![formation](./images/OpenClassRooms.png)
-
 # Formation Développeur d'application - JavaScript React
 
 ## Projet 7 : Kasa - Développez une application Web avec React et React Router / Vite
