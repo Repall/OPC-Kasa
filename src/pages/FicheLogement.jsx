@@ -41,11 +41,11 @@ function FicheLogement() {
                         </div>
                     </div>
                     <div className="flex flex-row-reverse lg:flex-col justify-between items-center gap-2">
-                        <div className="flex flex-row items-center gap-4">
-                            <p className="text-red-400">{logement.host.name}</p>
+                        <div className="flex flex-row items-center gap-7">
+                            <p className="text-red-400 w-5">{logement.host.name}</p>
                             <img className="w-12 h-12 lg:w-16 lg:h-16 rounded-full" src={logement.host.picture} alt="Photo Vendeur" />
                         </div>
-                        <div className="flex flex-row max-sm:w-6">
+                        <div className="flex flex-row max-md:size-6">
                             <Star rating={logement.rating} />
                         </div>
                     </div>

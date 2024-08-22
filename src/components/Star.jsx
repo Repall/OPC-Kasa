@@ -1,5 +1,5 @@
 import greyStar from '../assets/grey_star.png';
-import redStar from '../assets/red_star.svg';
+import redStar from '../assets/red_star.png';
 
 export default function Star({ rating }) {
 

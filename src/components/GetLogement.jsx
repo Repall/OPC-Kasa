@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import logementsData from '../assets/logement.json'; // Assure-toi que le chemin d'importation est correct
 
 const LogementsContext = createContext();
 
@@ -8,21 +9,13 @@ export function LogementsProvider({ children }) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch("/public/logement.json") 
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                setLogements(data);
-                setLoading(false);
-            })
-            .catch(err => {
-                setError(`Erreur lors du chargement des données: ${err.message}`);
-                setLoading(false);
-            });
+        try {
+            setLogements(logementsData);
+            setLoading(false);
+        } catch (err) {
+            setError(`Erreur lors du chargement des données: ${err.message}`);
+            setLoading(false);
+        }
     }, []);
 
     return (
