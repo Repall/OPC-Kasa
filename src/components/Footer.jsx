@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <>
-            <footer className="py-16  px-28 bg-black text-white flex flex-col justify-center items-center text-center">
+            <footer className="py-16  px-28 bg-black text-white flex flex-col justify-center items-center text-center mt-10">
                 <svg className="w-36" width="211" height="68" viewBox="0 0 211 68" fill="#FFF" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M20.5745 34.6485L9.34014 46.1362V62.2561H0.5V0H9.34014V34.8338L42.859 0H52.9883L26.6521 27.9782L54.83 62.2561H44.5165L20.5745 34.6485Z"

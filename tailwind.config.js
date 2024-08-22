@@ -5,10 +5,16 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    // colors: {
-    //   "bg-main": "#f87171",
-    // },
-    extend: {},
+    extend: {
+
+    },
+      theme: {
+        screens: {
+          "phone": {"max":"450px"},
+          // => @media (min-width: 640px) { ... }
+          
+        },
+      },
   },
   plugins: [],
 }

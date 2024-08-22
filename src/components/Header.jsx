@@ -1,8 +1,10 @@
+import { NavLink } from "react-router-dom";
+
 function Header() {
     return (
         <>
-            <header className="flex flex-row justify-between p-5 lg:p-10">
-                <svg className="w-36" width="211" height="68" viewBox="0 0 211 68" fill="#FF6060" xmlns="http://www.w3.org/2000/svg">
+            <header className="flex flex-row justify-between  py-5 md:py-12 px-5 md:px-20">
+                <svg className="w-36 max-sm:w-24 max-sm:h-16" width="211" height="68" viewBox="0 0 211 68" fill="#FF6060" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M20.5745 34.6485L9.34014 46.1362V62.2561H0.5V0H9.34014V34.8338L42.859 0H52.9883L26.6521 27.9782L54.83 62.2561H44.5165L20.5745 34.6485Z"
                         fill="#FF6060"
@@ -22,12 +24,30 @@ function Header() {
                     />
                 </svg>
                 <nav className="flex flex-row justify-center items-center">
-                    <ul className="flex flex-row gap-6 uppercase font-medium text-sm lg:normal-case">
-                        <li>
-                            <a href="/">Accueil</a>
+                    <ul className="flex flex-row gap-6 lg:gap-16 uppercase font-medium text-sm text-center items-center lg:text-2xl lg:normal-case ">
+                        <li className="hover:text-red-400 duration-500">
+                        <NavLink
+                                to="/"
+                                style={({ isActive }) => {
+                                    return {
+                                        textDecorationLine: isActive ? "underline" : ""
+                                    };
+                                }}
+                            >
+                                Accueil
+                            </NavLink>
                         </li>
-                        <li>
-                            <a href="/a-propos">A Propos</a>
+                        <li className="hover:text-red-400 duration-500">
+                            <NavLink
+                                to="/a-propos"
+                                style={({ isActive }) => {
+                                    return {
+                                        textDecorationLine: isActive ? "underline" : ""
+                                    };
+                                }}
+                            >
+                                À Propos
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
