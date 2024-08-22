@@ -12,7 +12,7 @@
 
 ## Voir le projet : 
 
-repall.fr/projet/6
+https://repall.fr/projet/6
 
 ## Tester le projet :
 
