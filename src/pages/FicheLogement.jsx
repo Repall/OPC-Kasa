@@ -11,7 +11,7 @@ import Carousel from "../components/Carousel";
 function FicheLogement() {
     const { id } = useParams();
     const { logements, loading, error } = useLogements();
-    const navigate = useNavigate(); // Initialise le hook
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!loading && logements.length > 0) {
