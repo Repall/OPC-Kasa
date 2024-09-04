@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLogements } from "../components/GetLogement";
 
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import Thumb from "../components/Thumb";
 
 function Home() {

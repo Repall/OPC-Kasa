@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import logementsData from '../assets/logement.json'; // Assure-toi que le chemin d'importation est correct
+import logementsData from '../assets/logement.json'; 
 
 const LogementsContext = createContext();
 

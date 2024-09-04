@@ -1,14 +1,7 @@
 import React, { useState } from "react";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import Collapse from "../components/Collapse";
 
 function A_Propos() {
-    // const [isVisible, setIsVisible] = useState(false);
-
-    // const handleClick = () => {
-    //     setIsVisible(!isVisible);
-    // };
 
     const aboutDatas = [
         {

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import Tag from "../components/Tag";
 import { useLogements } from "../components/GetLogement";
@@ -13,20 +13,21 @@ function FicheLogement() {
     const { logements, loading, error } = useLogements();
     const navigate = useNavigate(); // Initialise le hook
 
-    if (loading) {
-        return <div>Chargement des données...</div>;
-    }
+    useEffect(() => {
+        if (!loading && logements.length > 0) {
+            const logement = logements.find((l) => l.id === id);
+            if (!logement) {
+                navigate("/404");
+            }
+        }
+    }, [loading, logements, id, navigate]);
 
-    if (error) {
-        return <div>Erreur : {error}</div>;
-    }
+    if (loading) return <div>Chargement des données...</div>;
+    if (error) return <div>Erreur : {error}</div>;
 
     const logement = logements.find((l) => l.id === id);
+    if (!logement) return null; 
 
-    if (!logement) {
-        navigate('/404');
-
-    }
     return (
         <>
             <div className="flex flex-col gap-5 px-5 md:px-20">
@@ -57,7 +58,6 @@ function FicheLogement() {
                         </div>
                     </div>
                     <div className="lg:w-1/2">
-                        {/* <p className="bg-red-400 w-full text-white rounded-lg px-3 py-1">Équipements</p> */}
                         <div>
                             <Collapse title={"Équipements"} content={logement.equipments} />
                         </div>
